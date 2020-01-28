@@ -1,0 +1,21 @@
+.thumbnail img {
+	width: 100%;
+	
+}
+
+.thumbnail {
+	padding: 0;
+	border-color: #ccc;
+	border-width: 1.5px;
+	border-style: solid;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+.delete-form {
+	display: inline;
+}
+
+
