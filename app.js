@@ -11,6 +11,7 @@ var express = require("express"),
 	User = require("./models/user"),
 	seedDB = require("./seeds");
 
+//mongoDB Atlas
 mongoose.connect("mongodb+srv://krittakat:Hugh83piX36@cluster0-sdmzq.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useCreateIndex: true,
@@ -20,7 +21,6 @@ mongoose.connect("mongodb+srv://krittakat:Hugh83piX36@cluster0-sdmzq.mongodb.net
 }).catch(err => {
 	console.log("ERROR:", err.message);
 });
-
 
 //requiring routes
 var commentRoutes = require("./routes/comments"),
@@ -64,6 +64,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
 
-app.listen(3000, function() { 
+app.listen(3000 || process.env.PORT, () => { 
   console.log('The Yelpcamp Server is on port 3000'); 
 });
