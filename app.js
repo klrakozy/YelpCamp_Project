@@ -10,7 +10,18 @@ var express = require("express"),
 	Comment = require("./models/comment"),
 	User = require("./models/user"),
 	seedDB = require("./seeds");
-	  
+
+mongoose.connect("mongodb+srv://krittakat:Hugh83piX36@cluster0-sdmzq.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true,
+	useUnifiedTopology: true
+}).then(() => {
+	console.log("Connected to DB!");
+}).catch(err => {
+	console.log("ERROR:", err.message);
+});
+
+
 //requiring routes
 var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
